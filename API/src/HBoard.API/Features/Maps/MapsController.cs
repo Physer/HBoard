@@ -1,13 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HBoard.Business.Maps;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HBoard.API.Features.Maps
 {
     [Route("api/[controller]")]
     public class MapsController
     {
-        public string Get()
+        private readonly IMapsService _mapsService;
+
+        public MapsController(IMapsService mapsService)
         {
-            return "Hello HBoard!";
+            _mapsService = mapsService;
         }
+
+        public async Task<string> Get() => await _mapsService.GetDirections(string.Empty, string.Empty);
     }
 }
