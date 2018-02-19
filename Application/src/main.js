@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
 import App from './App.vue'
 import router from './router/router';
-//import store from './store/store';
+import store from './store/store';
 
 Vue.config.productionTip = false;
 
