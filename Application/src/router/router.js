@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-//import Maps from '@/.././components/Maps/maps';
+import Maps from '../components/Maps/Maps.vue';
+import Home from '../components/Home/Home.vue';
 
 Vue.use(Router);
 
@@ -11,7 +12,7 @@ const router = new Router({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Home,
         },
         {
             path: '/maps',

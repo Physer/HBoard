@@ -13,7 +13,7 @@
   "private": true,
   "license": "Apache 2.0",
   "scripts": {
-    "start": "webpack --progress --colors --watch",
+    "start": "webpack-dev-server",
     "build": "webpack"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "uglifyjs-webpack-plugin": "^1.2.0",
     "vue-hot-reload-api": "^2.1.0",
     "vue-html-loader": "^1.2.4",
+    "vue-loader": "^14.1.1",
     "vue-template-compiler": "^2.3.4",
     "webpack-dev-server": "^2.11.1"
   },

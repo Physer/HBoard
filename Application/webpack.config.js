@@ -14,7 +14,8 @@ module.exports = {
 	},
 	output: {
 		path: outputPath,
-		filename: fileName
+		filename: fileName,
+		publicPath: "/dist/"
 	},
 	module: {
 		rules: [
