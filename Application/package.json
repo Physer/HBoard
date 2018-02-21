@@ -13,7 +13,7 @@
   "private": true,
   "license": "Apache 2.0",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --history-api-fallback",
     "build": "webpack"
   },
   "devDependencies": {
