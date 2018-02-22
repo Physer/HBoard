@@ -1,17 +1,18 @@
 import Vue from 'vue';
-import { sync } from 'vuex-router-sync';
 import App from './App.vue'
-import router from './router/router';
 import store from './store/store.js';
+
+import Home from './components/Home/Home.vue';
+import Maps from './components/Maps/Maps.vue';
 
 Vue.config.productionTip = false;
 
-sync(store, router);
-console.log("Hi");
+Vue.component('home', Home);
+Vue.component('maps', Maps);
+
 new Vue({
   el: '#app',
   functional: true,
-  router,
   store,
   render(h) {
     return h(App);
