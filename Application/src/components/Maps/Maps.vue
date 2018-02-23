@@ -1,7 +1,10 @@
 <template>
   <div>
-      {{getTime()}}
-      <h2>Hello {{ message }} - {{count}}</h2>
+      {{getTimeToWork()}}
+      {{getTimeToHome()}}
+      Time to work: {{timeToWork}}
+      <br />
+      Time to home: {{timeToHome}}
   </div>
 </template>
 
@@ -12,18 +15,22 @@ import MapsService from '../../services/MapsService';
 export default {
     name: 'maps',
     data: function() {
-        return {message: ""};
-    },
-    computed: {
-        count() {
-            return store.state.count;
-        },
+        return { 
+            timeToWork: "",
+            timeToHome: ""
+        }
     },
     methods: {
-        getTime() {
+        getTimeToWork: function() {
             let service = new MapsService();
-            service.getTravelTime("utrecht", "amsterdam").then(data => {
-                this.message = data;
+            service.getTravelTime("IJsselsteen 47, Wijk bij Duurstede", "Entrada 705, Amsterdam").then(data => {
+                this.timeToWork = data;
+            });
+        },
+        getTimeToHome: function() {
+           let service = new MapsService();
+            service.getTravelTime("Entrada 705, Amsterdam", "IJsselsteen 47, Wijk bij Duurstede").then(data => {
+                this.timeToHome = data;
             });
         }
     }
