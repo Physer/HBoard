@@ -15,14 +15,26 @@ namespace HBoard.API.Features.Trains
             _stationService = stationService;
         }
 
-        [Route("departures/{stationName}")]
-        public async Task<IActionResult> Get(string stationName)
+        [Route("stations/{stationName}")]
+        public async Task<IActionResult> GetStation(string stationName)
         {
             try
             {
                 return Ok(await _stationService.SearchForStation(stationName));
             }
             catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        public async Task<IActionResult> GetDepartures(string stationId)
+        {
+            try
+            {
+                return Ok();
+            }
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
