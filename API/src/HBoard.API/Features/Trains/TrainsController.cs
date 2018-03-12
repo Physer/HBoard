@@ -15,7 +15,7 @@ namespace HBoard.API.Features.Trains
             _stationService = stationService;
         }
 
-        [Route("stations/{stationName}")]
+        [HttpGet("stations/{stationName}")]
         public async Task<IActionResult> GetStation(string stationName)
         {
             try
@@ -28,11 +28,12 @@ namespace HBoard.API.Features.Trains
             }
         }
 
+        [HttpGet("departures/{stationId}")]
         public async Task<IActionResult> GetDepartures(string stationId)
         {
             try
             {
-                return Ok();
+                return Ok(await _stationService.GetDepartures(stationId));
             }
             catch(Exception e)
             {
