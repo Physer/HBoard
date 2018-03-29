@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HBoard.Business.Maps;
+using HBoard.Business.PublicTransport.Trains;
 using HBoard.Business.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace HBoard.API
             services.AddMvc();
 
             services.AddTransient<IMapsService, GoogleMapsService>();
+            services.AddTransient<ITrainStationService, TrainsService>();
 
             services.Configure<ApplicationSettings>(Configuration.GetSection("Application"));
         }
