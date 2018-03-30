@@ -1,8 +1,9 @@
 import axios from 'axios';
+import Config from '../Config';
 
 export default class MapsService {
     getTravelTime(origin, destination) {
-        return axios.get('http://localhost:58338/api/maps', {
+        return axios.get(`${Config.apiBaseUrl}/${Config.getDirectionsUrl}`, {
             params: {
                 origin: origin,
                 destination: destination
