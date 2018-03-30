@@ -1,5 +1,5 @@
 <template>
-    <div class="grid">
+    <div class="maps">
         <div>
           <h2>Travel time by car</h2>
             <div>
@@ -44,5 +44,7 @@ export default {
 </script>
 
 <style>
-
+.maps {
+  background-color:blue;
+}
 </style>
